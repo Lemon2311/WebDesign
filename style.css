@@ -1,0 +1,94 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+  }
+  
+  .image-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden; /* Ensure the overlay is contained within the border-radius */
+  border-radius: 10px; /* Optional: For rounded corners */
+}
+
+.image-container img {
+  display: block;
+  width: 100%; /* Ensure the image fills the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, transparent 0%, black 100%);
+  pointer-events: none; /* Ensure the overlay doesn't interfere with interactions */
+}
+
+  
+  .image-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 1) 100%);
+    border-radius: 10px; /* Match the container's border-radius */
+  }
+   #container {
+    perspective: 1000px;
+    width: 600px; /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
+    position: relative;
+    box-shadow: 10 4px 8px rgba(0,0,0,0.1);
+    
+  }
+  
+  #image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.1s; /* Smooth transition */
+    transform-style: preserve-3d; /* Important for 3D effect */
+  }
+  
+  .icon-container {
+    position: fixed; /* Fixed positioning relative to the viewport */
+    top: 0; /* Align top */
+    left: 0; /* Align left */
+    padding: 0px; /* Add some padding around the icon */
+    display: flex; /* Use flexbox to align items in a row */
+    align-items: center; /* Align items vertically in the center */
+  }
+  
+  .icon-container img {
+    width: 50px; /* Set the icon size, adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .icon-text {
+    margin-left: -15px; /* Negative margin to move text closer to the icon, potentially overlapping */
+    color: white; /* White text color */
+    font-family: "Micro 5", sans-serif;
+    font-size: 100px; /* Adjust text size as needed */
+    font-weight: 400;
+    font-style: normal;
+  }
+    .icon-container {
+    position: fixed; /* Fixed positioning relative to the viewport */
+    top: 0; /* Align top */
+    left: 0; /* Align left */
+    padding: 10px; /* Add some padding around the icon */
+  }
+  
+  .icon-container img {
+    width: 100px; /* Set the icon size, adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    color: white;
+  }
